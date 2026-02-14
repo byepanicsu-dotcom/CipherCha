@@ -1,5 +1,5 @@
 
-const CACHE_NAME = 'cipherchat-v1';
+const CACHE_NAME = 'cipherchat-v2';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
@@ -10,10 +10,13 @@ const ASSETS_TO_CACHE = [
   'https://esm.sh/react@^19.2.4/',
   'https://esm.sh/react@^19.2.4',
   'https://esm.sh/@google/genai@^1.41.0',
-  'https://esm.sh/peerjs@1.5.4?bundle'
+  'https://esm.sh/peerjs@1.5.4?bundle',
+  'https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f512.png',
+  'https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/512/emoji_u1f512.png'
 ];
 
 self.addEventListener('install', (event) => {
+  self.skipWaiting(); // Force activation
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       return cache.addAll(ASSETS_TO_CACHE);
@@ -22,7 +25,6 @@ self.addEventListener('install', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-  // Network first, fall back to cache strategy (best for chat apps)
   event.respondWith(
     fetch(event.request)
       .catch(() => {
@@ -41,6 +43,6 @@ self.addEventListener('activate', (event) => {
           }
         })
       );
-    })
+    }).then(() => self.clients.claim()) // Claim clients immediately
   );
 });
