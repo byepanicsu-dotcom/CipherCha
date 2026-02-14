@@ -1,5 +1,5 @@
 
-const CACHE_NAME = 'cipherchat-v4';
+const CACHE_NAME = 'cipherchat-v5';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
@@ -11,7 +11,8 @@ const ASSETS_TO_CACHE = [
   'https://esm.sh/react@^19.2.4',
   'https://esm.sh/@google/genai@^1.41.0',
   'https://esm.sh/peerjs@1.5.4?bundle',
-  'https://cdn.jsdelivr.net/gh/googlefonts/noto-emoji@main/png/512/emoji_u1f512.png'
+  'https://placehold.co/192x192/121215/10b981.png?text=CC',
+  'https://placehold.co/512x512/121215/10b981.png?text=Cipher'
 ];
 
 self.addEventListener('install', (event) => {
