@@ -1,26 +1,25 @@
 {
-  "name": "CipherChat Secure",
+  "name": "CipherChat",
   "short_name": "CipherChat",
-  "id": "/?source=pwa",
-  "start_url": "/?source=pwa",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#121215",
   "theme_color": "#121215",
   "orientation": "portrait",
   "scope": "/",
-  "description": "End-to-end encrypted P2P messenger simulation.",
+  "description": "Secure P2P Messenger",
   "categories": ["social", "productivity"],
   "icons": [
     {
-      "src": "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f512.png",
-      "sizes": "128x128",
-      "type": "image/png"
-    },
-    {
-      "src": "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/512/emoji_u1f512.png",
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Lock_green.svg/512px-Lock_green.svg.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
+    },
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Lock_green.svg/192px-Lock_green.svg.png",
+      "sizes": "192x192",
+      "type": "image/png"
     }
   ]
 }

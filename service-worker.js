@@ -1,5 +1,5 @@
 
-const CACHE_NAME = 'cipherchat-v2';
+const CACHE_NAME = 'cipherchat-v3';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
@@ -11,12 +11,12 @@ const ASSETS_TO_CACHE = [
   'https://esm.sh/react@^19.2.4',
   'https://esm.sh/@google/genai@^1.41.0',
   'https://esm.sh/peerjs@1.5.4?bundle',
-  'https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/128/emoji_u1f512.png',
-  'https://raw.githubusercontent.com/googlefonts/noto-emoji/main/png/512/emoji_u1f512.png'
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Lock_green.svg/512px-Lock_green.svg.png',
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Lock_green.svg/192px-Lock_green.svg.png'
 ];
 
 self.addEventListener('install', (event) => {
-  self.skipWaiting(); // Force activation
+  self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       return cache.addAll(ASSETS_TO_CACHE);
@@ -43,6 +43,6 @@ self.addEventListener('activate', (event) => {
           }
         })
       );
-    }).then(() => self.clients.claim()) // Claim clients immediately
+    }).then(() => self.clients.claim())
   );
 });
