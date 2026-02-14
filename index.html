@@ -11,6 +11,9 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="CipherChat" />
     
+    <!-- Icon for iOS and PWA Fallback -->
+    <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/googlefonts/noto-emoji@main/png/512/emoji_u1f512.png" />
+    
     <!-- Link to Manifest -->
     <link rel="manifest" href="/manifest.json" />
 
@@ -114,7 +117,7 @@
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
           navigator.serviceWorker.register('/service-worker.js')
-            .then(reg => console.log('SW registered'))
+            .then(reg => console.log('SW registered', reg))
             .catch(err => console.log('SW failed', err));
         });
       }
